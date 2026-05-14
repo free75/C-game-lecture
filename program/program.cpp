@@ -1,85 +1,110 @@
 ﻿#include <iostream>
+// 이름 공간(name space)은 main 함수 전에 선언하는 명령어입니다.
+// using namespace는 이름 공간을 사용할 때마다 이름 공간의 이름, 그리고 범위 지정 연산자를
+// 사용하는 불편함을 없애기 위해 사용하는 명령어입니다.
+// 다만 선언하려면 이름 공간이 선언된 이후에 선언해야 합니다.
+// 그런데 using namespace std;는 왜 이름 공간 없이 사용이 가능하냐면,
+// std는 C++ 표준 라이브러리에서 제공하는 이름 공간이기 때문에,
+// 이름 공간을 선언할 필요 없이 #include <iostream> 바로 아래에 선언을 하더라도
+// using namespace std를 사용할 수 있습니다.
+using namespace std;
 
-int packet = 1;
-
-
-// c언어에서의 포인터 변수는 void Swap으로 대체가 가능합니다.
-//main 함수 전에 void Swap에 선언한 X, Y 명령어들을 main 안에서 Swap(x, y)로 호출하여 x와 y의 값을 서로 바꿔주는 명령어입니다.
-// 즉 main 전에 Swap에 temporary라는 임시 변수에 x 값을 저장한 뒤에, x에 y 값을 저장하고, y에 temporary에 
-// 저장된 x 값을 저장하여 x와 y의 값을 서로 바꿔주는 명령어입니다.
-// 따라서 main 안에서 Swap(x, y) 명령어를 호출하면 x와 y의 값이 서로 바뀌게 됩니다.
-void Swap(int &parameterX, int &parameterY)
+namespace Client
 {
-	int temporary = parameterX;
+	int port = 1557;
 
-	parameterX = parameterY;
-
-	parameterY = temporary;
+	void Send()
+	{
+		cout << "the Client Sends data..." <<endl;
+	}
 }
+
+namespace Server
+{
+	int port = 1885;
+
+	void Send()
+	{
+		cout << "the Server Sends data..." <<endl;
+	}
+}
+
+using namespace Client;
+
+class GameObject
+{
+#pragma region 접근 지정자
+	// 클래스 내부에 포함되어 있는 속성에 접근 범위를
+	// 제한하는 지정자입니다.
+
+	// public : 클래스 내부와 자기가 상속하고 있는 클래스, 그리고
+	//          클래스 외부에서도 접근을 허용하는 지정자입니다.
+
+	// protected : 클래스 내부와 자기가 상속하고 있는 클래스까지만
+	//             접근을 허용하는 지정자입니다.
+
+	// private : 클래스 내부까지만 접근을 허용하는 지정자입니다.
+
+#pragma endregion
+
+	// 클래스 내부란 class 변수 이름 {}의 중괄호 안에 선언된 변수와 함수들을 의미합니다.
+	// 클래스 내부의 변수와 함수들은 보통 private와 protected로 선언하는 경우가 많습니다.
+
+private:
+
+	int x;
+
+	int y;
+
+	int z;
+
+protected:
+
+	const char * name;
+
+public:
+
+	void Initialize()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+	}
+
+};
 
 int main()
 {
-#pragma region 스트림
-    //// 시간의 흐르멩 따라 연속적으로 발생하는 데이터의 흐름입니다.
-    //
-	//// 여기서 std::cout <<는 출력 스트림이고, std::cin >>는 입력 스트림입니다.
-    //int count = 0;
-    //
-    //std::cout << "Series : ";
-    //
-    //std::cin >> count;
-    //
-    //for (int i = 0; i < count; i++)
-    //{
-    //    std::cout << "Play station" << i + 1<< std::endl;
-    //}
-    //
-    //// 스트림은 운영 체제에 의해 생성되며, 스트림 자체에 버퍼라는
-    //// 임시 메모리 공간이 존재합니다.
+#pragma region 이름 공간
+	// 속성을 구분할 수 있도록 유효 범위를
+	// 설정하는 영역입니다.
+
+
+	// main 전에 선언한 이름 공간 CIient과 Server의 port 변수와 Send 함수를
+	// main 안에서 호출할 때에는 이름 공간으로 선언한 이름 Client, Server과 범위 지정 연산자인
+	// ::를 사용하여 이름 공간 안에 존재하는 port 변수와 Send 함수를 호출할 수 있습니다.
+	// 형식: Client::Sent(), Server::Send()
+
+
+	//Send();
+
+	//Send();
 #pragma endregion
 
-#pragma region 범위 지정 연산자
-    //// 여러 범위에서 사용되는 식별자를 구분하는데
-    //// 사용하는 연산자입니다.
-    //
-    //// main 안에서 있는 step에 저장됩니다.
-    //
-    //int packet = 100;
-    //
-    //// main 함수 전에 선언한 int packet = 1이라는 전역 변수 값과, main 안에 존재하는 int packet = 100이라는
-    //// 값이 동시에 존재할때엔 가까운 변수 값이 먼저 출력됩니다.
-    //// 하지만 전역 변수의 값을 출력하고 싶다면, 범위 지정 연산자인 ::를 사용하여 전역 변수의 값을 출력할 수 있습니다.
-    //
-	//std::cout << "packet 전역 변수의 값 : " << ::packet << std::endl;
-    //
-    //std::cout << "packet 지역 변수의 값 : " << packet << std::endl;
-    //
-    //// 범위 지정 연산자는 전역 변수와 같은 이름의 지역 변수가
-    //// 선언되었을 때 가장 가까운 범위에 선언된 변수의 이름을
-    //// 사용하는 범위 규칙이 존재하기 때문에 전역 변수가 호출되지 않습니다.
+#pragma region 클래스
+	// 사용자 정의 데이터 유형으로 속성과 함수가 포함되어
+	// 있으며, 클래스를 통해 객제를 생성하여, 접근하고 사용하는
+	// 집합체입니다.
 
-#pragma endregion
+	GameObject gameObject;
 
-#pragma region 참조자
-    // 하나의 변수에 또 다른 이름을 지정하는 지정자입니다.
+	gameObject.Initialize();
 
-    //int room = 10;
-    //
-    //int& a = room;
-    //
-    //std::cout << a;
+	cout << "game Object of Size " << sizeof(gameObject) << endl;
 
-    int x = 10;
-    int y = 20;
+	// 클래스의 경우 클래스 내부에 있는 변수의 클래스의
+	// 메모리 영역에 포함되지만, 정적 변수와 함수의
+	// 메모리는 클래스 영역에 포함되지 않습니다.
 
-	Swap(x, y);
-
-	std::cout << "x : " << x << std::endl;
-	std::cout << "y : " << y << std::endl;
-
-#pragma endregion
-
-    return 0;
+	return 0;
 }
-
-
