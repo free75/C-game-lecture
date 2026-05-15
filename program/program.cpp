@@ -1,110 +1,99 @@
 ﻿#include <iostream>
-// 이름 공간(name space)은 main 함수 전에 선언하는 명령어입니다.
-// using namespace는 이름 공간을 사용할 때마다 이름 공간의 이름, 그리고 범위 지정 연산자를
-// 사용하는 불편함을 없애기 위해 사용하는 명령어입니다.
-// 다만 선언하려면 이름 공간이 선언된 이후에 선언해야 합니다.
-// 그런데 using namespace std;는 왜 이름 공간 없이 사용이 가능하냐면,
-// std는 C++ 표준 라이브러리에서 제공하는 이름 공간이기 때문에,
-// 이름 공간을 선언할 필요 없이 #include <iostream> 바로 아래에 선언을 하더라도
-// using namespace std를 사용할 수 있습니다.
+
 using namespace std;
 
-namespace Client
+class Soldier
 {
-	int port = 1557;
-
-	void Send()
-	{
-		cout << "the Client Sends data..." <<endl;
-	}
-}
-
-namespace Server
-{
-	int port = 1885;
-
-	void Send()
-	{
-		cout << "the Server Sends data..." <<endl;
-	}
-}
-
-using namespace Client;
-
-class GameObject
-{
-#pragma region 접근 지정자
-	// 클래스 내부에 포함되어 있는 속성에 접근 범위를
-	// 제한하는 지정자입니다.
-
-	// public : 클래스 내부와 자기가 상속하고 있는 클래스, 그리고
-	//          클래스 외부에서도 접근을 허용하는 지정자입니다.
-
-	// protected : 클래스 내부와 자기가 상속하고 있는 클래스까지만
-	//             접근을 허용하는 지정자입니다.
-
-	// private : 클래스 내부까지만 접근을 허용하는 지정자입니다.
-
-#pragma endregion
-
-	// 클래스 내부란 class 변수 이름 {}의 중괄호 안에 선언된 변수와 함수들을 의미합니다.
-	// 클래스 내부의 변수와 함수들은 보통 private와 protected로 선언하는 경우가 많습니다.
-
 private:
+	// c++ 언어에선 class에서 미리 지정한 변수에 값을 부여할 수 있기 때문에 
+	// 가비지 값을 미리 없앨 수 있습니다.
+	int health = 0;
+	int defense = 0;
 
-	int x;
-
-	int y;
-
-	int z;
-
-protected:
-
-	const char * name;
+	static int count;
+						
+	// 비록 Soldier 클래스 안에 선언했지만, Sodier의 클래스에 소속되어있는 명령어가 아닙니다.
+	// 즉 class 내부에 있지만 소속되어 있지 않으니, 클래스 내부에선 값을 초기화하거나 선언하는 것이 불가능합니다.
 
 public:
-
-	void Initialize()
+	Soldier()
 	{
-		x = 0;
-		y = 0;
-		z = 0;
+		cout << "Created Soldier" << endl;
 	}
+	// 소멸자를 사용하기 위해선 ~(물결 무늬)와 클래스의 이름을 사용하여 선언해야 합니다.
+	// 예시로 ~Solider()는 Soldier 클래스의 소멸자입니다.
+	// 그리고 소멸자는 반드시 클래스의 맴버 함수 즉 클래스의 내부에 선언해야 합니다.
+	~Soldier()
+	{
+		count++;
 
+		cout << "Destrcution Count : " << endl;
+	}
 };
+
+int Soldier::count = 0;
+
+// 클래스 내부에선 값을 초기화, 선언하는 것이 불가능하기 때문에
+// 내부가 아닌 외부에서 int 클래스 이름::count = (초기화 값, 혹은 선언할 값)으로 설정해야만
+// class 내부에 있는 int count의 값을 초기화 하거나, 바꿀 수 있습니다.
+
 
 int main()
 {
-#pragma region 이름 공간
-	// 속성을 구분할 수 있도록 유효 범위를
-	// 설정하는 영역입니다.
+#pragma region 생성자
+	// 클래스의 인스턴스가 생성되는 시점에 자동으로
+	// 호출되는 특수한 맴버 함수입니다.
 
+	//Soldier soldier;
 
-	// main 전에 선언한 이름 공간 CIient과 Server의 port 변수와 Send 함수를
-	// main 안에서 호출할 때에는 이름 공간으로 선언한 이름 Client, Server과 범위 지정 연산자인
-	// ::를 사용하여 이름 공간 안에 존재하는 port 변수와 Send 함수를 호출할 수 있습니다.
-	// 형식: Client::Sent(), Server::Send()
+	// 생성자의 경우 객체가 생성될 때 단 한 번만 호출되며,
+	// 생성자는 반환형이 존재하지 않기 때문에 생성자가
+	// 호출되기 전에 객체에 대한 메모리가 할당되지 않습니다.
 
-
-	//Send();
-
-	//Send();
 #pragma endregion
 
-#pragma region 클래스
-	// 사용자 정의 데이터 유형으로 속성과 함수가 포함되어
-	// 있으며, 클래스를 통해 객제를 생성하여, 접근하고 사용하는
-	// 집합체입니다.
+#pragma	region 소멸자
+	// 객체가 소멸될 때 자동으로 실행되는 클래스의 
+	// 특수한 멤버 함수입니다.
 
-	GameObject gameObject;
+	//Soldier * address = nullptr;
+	// Soldier 클래스의 객체를 가리키는 포인터 변수를 선언하고 nullptr로 초기화합니다.
 
-	gameObject.Initialize();
+	//address = new Soldier; 
+	// Soldier 클래스의 객체가 메모리에 할당되고 생성자가 호출됩니다.
 
-	cout << "game Object of Size " << sizeof(gameObject) << endl;
+	//delete address;
+	// Soldier 클래스의 객체가 메모리에서 해제되고 소멸자가 호출됩니다.
+	// delete 연산자를 사용한 포인터 변수는 객체가 메모리에서 할당이 된 후에 선언해야만
+	// class 안에 있는 소멸자를 호출할 수 있습니다.
 
-	// 클래스의 경우 클래스 내부에 있는 변수의 클래스의
-	// 메모리 영역에 포함되지만, 정적 변수와 함수의
-	// 메모리는 클래스 영역에 포함되지 않습니다.
+	// 소멸자는 객체가 메모리에서 해제될 때 단 한 번만
+	// 호출되며, 소멸자에는 매개 변수를 생성하며 사용할
+	// 수 없습니다.
+	//Soldier* list[3];
+	//// Soldier의 배열문을 만들기 위해 Sodier list[]로 Soldier의 1~3까지의 배열문을 선언해주고
+	//
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	list[i] = new Soldier;
+	//}
+	//// 후에 for문과 
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	delete list[i];
+	//}
+
+#pragma endregion
+
+#pragma region 얕은 복사
+	// 객체를 복사할 때 주소 값을 복사하여 같은
+	// 메모리 공간을 가리키게 하는 복사입니다.
+
+	// 얕은 복사의 경우 같은 객체가 서로 같은 메모리 공간을
+	// 참조하고 있기 때문에 하나의 객체로 값을 변경하게 되면
+	// 서로 참조된 객체도 함께 영향을 받습니다.
+
+#pragma endregion
 
 	return 0;
 }
