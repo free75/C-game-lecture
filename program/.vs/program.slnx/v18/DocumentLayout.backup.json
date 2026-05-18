@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{A4C089AF-B6B3-481B-8DCC-80B830C3C736}|program.vcxproj|solutionrelative:program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29CB979F-34ED-4DD9-BA83-B03BE530A7DC}|Class1th (stream)\\Class1th (stream).vcxproj|C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\program\\Class1th (stream)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29CB979F-34ED-4DD9-BA83-B03BE530A7DC}|Class1th (stream)\\Class1th (stream).vcxproj|solutionrelative:Class1th (stream)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{39EF96F7-1568-40E4-88F6-5535D693B0FB}|..\\Class2th (Class)\\Class2th (Class).vcxproj|C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\Class2th (Class)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39EF96F7-1568-40E4-88F6-5535D693B0FB}|..\\Class2th (Class)\\Class2th (Class).vcxproj|C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\Class2th (Class)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29CB979F-34ED-4DD9-BA83-B03BE530A7DC}|Class1th (stream)\\Class1th (stream).vcxproj|C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\program\\Class1th (stream)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29CB979F-34ED-4DD9-BA83-B03BE530A7DC}|Class1th (stream)\\Class1th (stream).vcxproj|solutionrelative:Class1th (stream)\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,26 +25,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "source.cpp",
               "DocumentMoniker": "C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\Class2th (Class)\\source.cpp",
               "RelativeDocumentMoniker": "..\\Class2th (Class)\\source.cpp",
               "ToolTip": "C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\Class2th (Class)\\source.cpp",
               "RelativeToolTip": "..\\Class2th (Class)\\source.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAG4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAACgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-15T09:08:43.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "source.cpp",
               "DocumentMoniker": "C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\program\\Class1th (stream)\\source.cpp",
               "RelativeDocumentMoniker": "Class1th (stream)\\source.cpp",
               "ToolTip": "C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\program\\Class1th (stream)\\source.cpp",
               "RelativeToolTip": "Class1th (stream)\\source.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGAAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-14T09:39:32.286Z",
               "EditorCaption": ""
@@ -57,7 +57,7 @@
               "RelativeDocumentMoniker": "program.cpp",
               "ToolTip": "C:\\Users\\Hyunho\\OneDrive\\Desktop\\C-game-lecture\\program\\program.cpp",
               "RelativeToolTip": "program.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAawFIAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAJ4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-13T09:08:12.419Z",
               "EditorCaption": ""
