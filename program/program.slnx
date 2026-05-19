@@ -4,6 +4,8 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../Class2th (Class)/Class2th (Class).vcxproj" Id="39ef96f7-1568-40e4-88f6-5535d693b0fb" />
+  <Project Path="../Class3th (Constructor &amp; Destructor)/Class3th (Constructor &amp; Destructor).vcxproj" Id="7b6aa6d3-692e-44d4-9d3c-99ad18bf0300" />
+  <Project Path="../Class4th (Inheritance)/Class4th (Inheritance).vcxproj" Id="26839cd6-bcf5-4909-9b83-f47c7ddde6c7" />
   <Project Path="Class1th (stream)/Class1th (stream).vcxproj" Id="29cb979f-34ed-4dd9-ba83-b03be530a7dc" />
   <Project Path="program.vcxproj" Id="a4c089af-b6b3-481b-8dcc-80b830c3c736" />
 </Solution>
