@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 // 만든 헤더 파일을 호출하기 위해선 include "" 형태로 만들어야합니다.
 #include "Publisher.h"
+#include "Emerald.h"
+#include "Diamond.h"
 
 using namespace std;
 
@@ -18,11 +20,11 @@ int main()
 	// 객체 생성은 어떻게 하는가 * : main 안에서 클래스 이름을 선언한 이후에 뒤에 객체 이름을 선언하면
 	// 객체가 생성됩니다.
 
-	Publisher publisher;
-
-	publisher.Send(100);
-	publisher.Send("This program can't be executed");
-	publisher.Send("Identify the issue frequency : ", 60);
+	//Publisher publisher;
+	//
+	//publisher.Send(100);
+	//publisher.Send("This program can't be executed");
+	//publisher.Send("Identify the issue frequency : ", 60);
 
 	// 함수의 오버로딩의 경우 매개 변수에 전달하는 인수의
 	// 형태를 보고 호출하므로, 반환형으로 함수의 오버로딩을 생성할 수 없습니다.
@@ -30,6 +32,16 @@ int main()
 
 #pragma endregion
 
+#pragma region 오버라이딩
+	// 상위 클래스의 함수를 하위 클래스에서 재정의하여 사용하는 방법입니다.
+
+	Emerald emerald;
+    Diamond diamond;
+
+	emerald.Describe();
+    diamond.Describe();
+
+#pragma endregion
 	// 정적 바인딩 : 실행 전에 값이 설정되어 있는 걸 의미합니다.
 	// 동적 바인딩 : 실행 후에 값이 설정되어 있는 걸 의미합니다.
 
