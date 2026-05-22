@@ -3,6 +3,7 @@
 #include "Publisher.h"
 #include "Emerald.h"
 #include "Diamond.h"
+#include "Platinum.h"
 
 using namespace std;
 
@@ -42,6 +43,58 @@ int main()
     diamond.Describe();
 
 #pragma endregion
+
+#pragma region 가상 함수
+	// 실행 시간에 상위 클래스에 대한 참조로
+	// 하위 클래스에 재정의된 함수를 호출하는 함수입니다.
+
+	//Material* material1 = new Diamond();
+	//
+	//material1->Promote();
+	//
+	//delete material1;
+	//
+	//Material* material2 = new Emerald();
+	//
+	//material2->Promote();
+	//
+	//delete material2;
+
+	int choice;
+
+	cout << "choice your tier" << endl;
+	cout << " 1. Diamond " << endl;
+	cout << " 2. Emerald " << endl;
+	cout << " 3. Platinum " << endl;
+
+	cout << " Choice : ";
+	cin >> choice;
+
+	Material* material = nullptr;
+
+	if (choice == 1)
+	{
+		material = new Diamond();
+	}
+	else if (choice == 2)
+	{
+		material = new Emerald();
+	}
+	else if (choice == 3)
+	{
+		material = new Platinum();
+	}
+
+	material->Promote();
+
+	delete material;
+	
+	// 가상 함수의 경우 가상 함수 테이블을 사용하여 호출되는
+	// 함수를 실행 시간에 결정하며, 정적으로 선언된 함수는
+	// 가상 함수로 선언할 수 없습니다.
+
+#pragma endregion
+	
 	// 정적 바인딩 : 실행 전에 값이 설정되어 있는 걸 의미합니다.
 	// 동적 바인딩 : 실행 후에 값이 설정되어 있는 걸 의미합니다.
 

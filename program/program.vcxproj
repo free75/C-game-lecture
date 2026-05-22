@@ -130,6 +130,7 @@
     <ClCompile Include="Diamond.cpp" />
     <ClCompile Include="Emerald.cpp" />
     <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Platinum.cpp" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="Publisher.cpp" />
   </ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="Diamond.h" />
     <ClInclude Include="Emerald.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="Platinum.h" />
     <ClInclude Include="Publisher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -30,6 +30,9 @@
     <ClCompile Include="Diamond.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Platinum.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Publisher.h">
@@ -42,6 +45,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Diamond.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Platinum.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

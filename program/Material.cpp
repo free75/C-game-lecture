@@ -2,7 +2,10 @@
 
 void Material::Describe()
 {
-	cout << "Name : " << name << endl;
-	cout << "Weight : " << weight << "g" << endl;
-	cout << "transparency : " << transparency << endl;
+	cout << "This is a Material" << name << endl;
+}
+
+void Material::Promote()
+{
+	cout << "The material had neen enhanced : " << Reward << endl;
 }

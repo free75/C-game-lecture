@@ -9,7 +9,15 @@ Diamond::Diamond()
 
 void Diamond::Describe()
 {
+	Material::Describe();
 	cout << "Name : " << name << endl;
 	cout << "Weight : " << weight << "g" << endl;
 	cout << "hardness : " << hardness << endl;
 }
+
+void Diamond::Promote()
+{
+	cout << "Up rank : Diamond" << endl;
+	cout << "Reward : Character Unlock\n " << endl;
+}
+
